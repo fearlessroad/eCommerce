@@ -5,6 +5,6 @@ Class Users extends CI_Controller{
 		parent::__construct();
 	}
 	public function index(){
-			$this->load->view('shoppingcart');
+			$this->load->view('mainview');
 	}
 }
