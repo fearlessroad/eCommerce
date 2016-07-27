@@ -1,0 +1,42 @@
+	body
+	{
+		background-color:;
+		width:970px; 
+	}
+	p
+	{
+		/*vertica: right;*/
+	}
+	div
+	{
+		border:1px solid black;
+		width:100px;
+		height:100px;
+		/*display: inline-block;*/
+	
+
+	}
+
+	#product_info
+		{
+			/*border:1px solid black;*/
+			display:inline-block; 
+			width:200px;
+			height:570px;
+			 padding-left:10px; 
+			border:none;
+		}
+		#picture
+		{
+			 position:relative;
+			 bottom:520px;
+			border:1px solid black;
+			display: inline-block; 
+			width:400px;
+			height:400px;
+			margin-left:100px; 
+		}
+		#small_pic
+		{
+			border: 
+		}

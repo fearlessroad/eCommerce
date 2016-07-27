@@ -1,0 +1,105 @@
+		body{
+			background:linear-gradient(#23819C,#2897B7,#2FAACE,#44B4D5);
+			width:970px;
+		}
+
+		#header
+		{
+			/*background-color:light-gray; */
+			display:inline-block;
+			border: 1px solid black;
+			width:1200px; 
+			height:60px;
+
+		}
+		h2
+		{
+			/*color:white;*/
+		}
+		#shop{
+			
+			font-family: sans-serif;
+			display:inline-block; 
+			position:relative;
+			left:1000px;  
+			bottom:50px;
+		}
+		#search_box
+		{
+			width:200px;
+			height:250px;
+			border:1px solid black; 
+			display: inline-block;
+			padding-top:10px; 
+			padding-left:10px; 
+			position:relative;
+			bottom:550px; 
+		}
+		#main{
+			border:1px solid black; 
+			display:inline-block;
+			width:1200px; 
+			height:800px;
+			padding-left:5px; 
+			margin-left:20px; 
+			/*position:relative; 
+			bottom:92px;*/
+		}
+		div
+		{
+			border:1px solid black;
+			width:200px;
+			height:200px;
+			display:inline-block; 
+			padding-left:5px; 
+			margin-left:10px; 
+			margin-top:10px; 
+		}
+		ul
+		{
+			text-align:left;
+			
+			
+		}
+		li
+		{
+			display: inline;
+			position:relative; 
+			right:80px;
+			bottom:50px;
+			padding:40px;
+
+		}
+		a
+		{
+			text-decoration:none; 
+		}
+		#categories{
+			display: inline-block;
+			width:1200px;
+			height:60px;
+			border:none; 
+			/*display:none; */
+
+		}
+		#button
+		{
+			display: inline-block; 
+
+		}
+		 #search
+		{
+			position:relative;
+			bottom:80px;
+			text-align:right; 
+		}
+
+		#page_one{
+			border-right:1px solid black; 
+			padding-right:10px 
+		}
+		#page_two
+		{
+			border-right:1px solid black;
+			padding-right:10px; 
+		}

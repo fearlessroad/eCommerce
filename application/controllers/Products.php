@@ -1,6 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+<<<<<<< HEAD
+class Products extends CI_Controller 
+{
+	public function index()
+	{
+		$this->load->view('mainview');
+	}
+	public function show_product()
+	{
+		$this->load->view('product_view');
+		$this->load->helper('url');
+	}
+
+}
+=======
 class Products extends CI_Controller {
 
 
@@ -135,3 +150,4 @@ class Products extends CI_Controller {
 
 	}
 }
+>>>>>>> 7d9f3485642d82db42bf9bdfa00fa38d33b73f60
