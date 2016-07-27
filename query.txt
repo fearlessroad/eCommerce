@@ -29,3 +29,10 @@ SELECT * FROM addresses;
 -- add address
 INSERT INTO addresses (address1, address2, city, state, zip, updated_at, created_at, user_id)
 VALUES (123, 'Apt 1', 'Burbank', 'CA', 91234, NOW(), NOW(), 1);
+
+-- get all admins
+SELECT * FROM admins;
+-- add admin
+INSERT INTO admins (email, password, updated_at, created_at)
+VALUES ('poop@gmail.com', md5('1'), NOW(), NOW());
+
