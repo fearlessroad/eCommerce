@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-<<<<<<< HEAD
-class Products extends CI_Controller 
-{
+class Products extends CI_Controller {
+
+
 	public function index()
 	{
 		$this->load->view('mainview');
@@ -14,12 +14,7 @@ class Products extends CI_Controller
 		$this->load->helper('url');
 	}
 
-}
-=======
-class Products extends CI_Controller {
-
-
-	public function index()
+	public function dashboard_view()
 	{
 		$this->load->view('dashBoardProductView');
 	}
@@ -150,4 +145,4 @@ class Products extends CI_Controller {
 
 	}
 }
->>>>>>> 7d9f3485642d82db42bf9bdfa00fa38d33b73f60
+

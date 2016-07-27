@@ -73,6 +73,7 @@
 		a
 		{
 			text-decoration:none; 
+			color:black;
 		}
 		#categories{
 			display: inline-block;
@@ -102,4 +103,23 @@
 		{
 			border-right:1px solid black;
 			padding-right:10px; 
+		}
+
+		#first{
+			border-right:1px solid black;
+			padding-right:5px;
+			text-decoration:underline; 
+			color:black;
+		}
+		#prev
+		{
+			border-right:1px solid black;
+			padding-right:5px;
+			text-decoration:underline; 
+			color:black;
+		}
+		#next
+		{
+			text-decoration:underline; 
+			color:black;
 		}

@@ -29,7 +29,7 @@
 </div>
 
 <div id="main">
-	<p>Some product (page #)</p>
+	<h1>Some product (page #)</h1>
 	<a  id="first" href="?">First</a>
 	<a  id="prev" href="?">Prev</a>
 	<a  id="" href="?">#</a>
