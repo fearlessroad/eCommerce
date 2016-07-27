@@ -7,7 +7,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="UTF-8">
 	<title>A Web Page</title>
 	<link rel="stylesheet" type="text/css" href="/assets/css/dashBoardProductView.css">
-	<script src="/assets/js/coolcat.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
