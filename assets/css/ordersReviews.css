@@ -1,0 +1,60 @@
+*{
+    margin: 0px
+    padding: 0px;
+}
+#container{
+    width: 970px;
+}
+div{
+    border: 1px dotted black;
+}
+h1, #orders, #products, #logOff{
+    display: inline-block;
+    color: white;
+    margin: 10px;
+}
+#logOff{
+    margin-left: 550px;
+}
+#order{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid black;
+}
+#header{
+    background-color: #A00006;
+    border: 1px solid black;
+}
+#search{
+    margin: 10px;
+    width: 200px;
+}
+#showAll{
+    margin-left: 600px;
+    color: white;
+    background-color: #0000FF;
+}
+#orderID{
+    width: 180px;
+}
+#item{
+    width: 70px;
+}
+#price{
+    width: 180px;
+}
+#quantity{
+    width: 200px;
+}
+#total{
+    width: 200px;
+}
+#ordersInfo{                    /*table overall height*/
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+}
+.orderRow{                      /*each table row*/
+    height: 40px;
+    border: 1px solid black;
+}

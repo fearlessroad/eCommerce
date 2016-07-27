@@ -1,18 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Products extends CI_Controller {
-
-
-	public function index()
-	{
-		$this->load->view('mainview');
-	}
-	public function show_product()
-	{
-		$this->load->view('product_view');
-		$this->load->helper('url');
-	}
 
 	public function dashboard_view()
 	{
@@ -146,3 +134,6 @@ class Products extends CI_Controller {
 	}
 }
 
+=======
+}
+>>>>>>> 2c33a11074b864d91190c78fe9a3aaec1f0df89c
