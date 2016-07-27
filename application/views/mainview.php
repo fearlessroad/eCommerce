@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <head>
 	<title>The Unpopped Kernel</title>
-	<link rel="stylesheet" type="text/css" href="css/mainview.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/mainview.css">
 </head>
 <body>
 <div id="header">

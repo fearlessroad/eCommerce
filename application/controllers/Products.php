@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
+<<<<<<< HEAD
 	public function index()
 	{
 		$this->load->view('dashBoardProductView');
@@ -135,3 +136,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 
+=======
+class Products extends CI_Controller{
+	public function index(){
+		$this->load->view('mainview');
+	}
+}
+>>>>>>> dea0d4fe3428da2339a1fb71d3d5d7a96e75229a

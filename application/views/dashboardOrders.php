@@ -3,23 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dashboard Orders</title>
-	<link rel="stylesheet" types="text/css" href="/CSS/dashboardorders.css">
-
+	<link rel="stylesheet" types="text/css" href="/assets/css/dashboardorders.css">
 	</style>
 </head>
 <body>
 	<div id='wrapper'>
 		<div id="header">
 			<h1>Dashboard</h1>
-			<a id="orders" href="">Orders</a>
-			<a id="products" href="">Products</a>
-			<a href="logout" href="">Logout</a>
-		</div>
-
-		<div id="searchBar">
+			<a href="/dashboards/showorders/">Orders</a>
+			<a href="/dashboards/showproducts">Products</a>
+			<a href="/dashboards/logout/" href="">Logout</a>			
 			<form id="Search">
 				<input type="search" name="search" placeholder="search">
 			</form>
+		</div>
+
+		<div id="searchBar">
+
 			<select id="ShowAll" name="showAll">
 				<option value="Show All">Show All</option>
 				<option value="Order In">Order in</option>
