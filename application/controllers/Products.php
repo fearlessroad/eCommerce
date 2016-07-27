@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-	public function dashboard_view()
+	public function index()
 	{
 		$this->load->view('dashBoardProductView');
 	}
@@ -134,6 +134,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 }
 
-=======
-}
->>>>>>> 2c33a11074b864d91190c78fe9a3aaec1f0df89c
+
