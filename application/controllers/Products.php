@@ -14,7 +14,7 @@ class Products extends CI_Controller{
 		else{
 			$category = $this->input->post('categoryWrite');
 		}
-		// check if author exists
+		// check if category exists
 		$check = $this->product->IfExists($category);
 
 		// don't add if category already exists
@@ -35,8 +35,4 @@ class Products extends CI_Controller{
 		$this->product->addProduct($data);
 		redirect('dashboards/showproducts');
 	}
-	// public function getAll(){
-	// 	$this->load->model('product');
-	// 	$products = $this->product->getAll();
-	// }
 }
