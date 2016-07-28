@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dashboard Orders</title>
-	<link rel="stylesheet" types="text/css" href="/assets/css/dashboardorders.css">
+	<link rel="stylesheet" types="text/css" href="/assets/css/mainDashboard.css">
 	</style>
 </head>
 <body>
@@ -11,8 +11,8 @@
 		<div id="header">
 			<h1>Dashboard</h1>
 			<a href="/dashboards/showorders/">Orders</a>
-			<a href="/dashboards/showproducts">Products</a>
-			<a href="/dashboards/logout/" href="">Logout</a>			
+			<a href="/dashboards/showproducts/">Products</a>
+			<a href="/dashboards/logout/" href="/dashboards/logout">Logout</a>			
 			<form id="Search">
 				<input type="search" name="search" placeholder="search">
 			</form>

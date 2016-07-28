@@ -18,10 +18,17 @@
 			padding:5px;
 
 		}
+<<<<<<< HEAD:assets/css/mainview.css
 		#cart{
 			height:50px;
 			float:right;
 			vertical-align: top;
+=======
+		#shoppingCart{
+			
+			font-family: sans-serif;
+			display:inline-block; 
+>>>>>>> master:assets/css/productlisting.css
 			position:relative;
 			bottom:15px;
 		}

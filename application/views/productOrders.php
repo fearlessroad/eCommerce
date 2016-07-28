@@ -15,9 +15,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<div id="header">
 		<h1>Dashboard</h1>
-		<a id="orders" href="">Orders</a>
-		<a id="products" href="">Products</a>
-		<a id="logOff" href="">log off</a>
+		<a id="orders" href="/dashboards/showorders/">Orders</a>
+		<a id="products" href="/dashboards/showproducts/">Products</a>
+		<a id="logOff" href="/dashboards/logout">log off</a>
 	</div>
 	<div>
 		<input id="search" type="text" name="search" placeholder="search">

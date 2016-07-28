@@ -11,9 +11,9 @@
 	<div id='wrapper'>
 		<div id="header">
 			<h1>Dashboard</h1>
-			<a id="orders" href="">Orders</a>
-			<a id="products" href="">Products</a>
-			<a href="logout" href="">Logout</a>
+			<a id="orders" href="/dashboards/showorders/">Orders</a>
+			<a id="products" href="/dashboards/showproducts/">Products</a>
+			<a id="logOff" href="/dashboards/logout">log off</a>
 		</div>
 
 		<div id="order">

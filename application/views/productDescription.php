@@ -3,12 +3,13 @@
 <meta charset="utf-8">
 <head>
 	<title>The Unpooped Kernel</title>
-	<link rel="stylesheet" type="text/css" href=<? echo base_url();?>/css/productview.css>
+	<link rel="stylesheet" type="text/css" href=<? echo base_url();?>/css/productDescription.css>
 
 </head>
 
 
 <body>
+	<a href="/products">Go Back</a>
 	<h1>Some product</h1>
 	<div id="picture">
 		Some picture of product 
@@ -20,7 +21,7 @@
 		</p>
 		
 	
-	<form action="?" method="post">
+	<form action="/products/shoppingcart/" method="post">
 		<label>
 			<select>
 				<option>1 </option>
@@ -28,7 +29,7 @@
 				<option>3</option>
 			</select>
 		</label>
-		<button>Buy</button>
+		<input type="submit" value="Buy">
 	</form>
 
 	</div>

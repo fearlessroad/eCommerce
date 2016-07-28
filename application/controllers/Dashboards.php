@@ -12,7 +12,7 @@ class Dashboards extends CI_Controller {
 			redirect('dashboards/index');
 		}
 		else{
-			$this->load->view("dashboardOrders");
+			$this->load->view("mainDashboard");
 		}
 	}
 	public function showProducts(){
@@ -25,7 +25,7 @@ class Dashboards extends CI_Controller {
 			$products = $this->product->getAllProducts();
 			$data = array('products'=>$products,
 							'categories'=>$categories);
-			$this->load->view("dashboardProductView", $data);
+			$this->load->view("productOrders", $data);
 		}
 	}
 	public function login(){
@@ -46,5 +46,9 @@ class Dashboards extends CI_Controller {
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect('dashboards/index');
+	}
+
+	public function indivOrder(){
+		$this->load->view("individualOrder");
 	}
 }

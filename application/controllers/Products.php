@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller{
 	public function index(){
-		$this->load->view('mainview');
+		$this->load->view('productListing');
 	}
 	public function addProduct(){
 		$this->load->model('product');
@@ -16,6 +16,7 @@ class Products extends CI_Controller{
 		}
 		// check if category exists
 		$check = $this->product->IfExists($category);
+
 
 		// don't add if category already exists
 		if($check==null){
@@ -35,4 +36,20 @@ class Products extends CI_Controller{
 		$this->product->addProduct($data);
 		redirect('dashboards/showproducts');
 	}
+<<<<<<< HEAD
+=======
+	// public function getAll(){
+	// 	$this->load->model('product');
+	// 	$products = $this->product->getAll();
+	// }
+
+	// click image to see product_view
+	public function productView(){
+		$this->load->view('productDescription');
+	}
+
+	public function shoppingcart(){
+		$this->load->view('shoppingcart');
+	}
+>>>>>>> master
 }
