@@ -6,17 +6,16 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/productlisting.css">
 </head>
 <body>
-<!-- <<<<<<< HEAD:application/views/mainview.php -->
 	<div id="wrapper">
 		<div id="header">
 			<h2>The Unpopped Kernel</h2> 
 		</div>			
 		<div id="categories">
 			<ul>
-				<li><a href="">Designer Babies</a></li>
-				<li><a href="">Toilet Seat Art</a></li>
-				<li> <a href="">My Little Pony Gear</a></li>
-				<li><a href="">Apocalypse Kits</a></li>
+				<li><a class="nav" href="">Designer Babies</a></li>
+				<li><a class="nav" href="">Toilet Seat Art</a></li>
+				<li> <a class="nav" href="">My Little Pony Gear</a></li>
+				<li><a class="nav" href="">Apocalypse Kits</a></li>
 				<form  id="search" action="?" method="post">
 				<li><label><input type="text" name="product_name"></label></li>
 				<li><input id="button" type="submit" name="Submit"></li></form>
@@ -38,12 +37,12 @@
 					</select>
 				</label>
 			</form>
-<!-- 			<a href="/products/show_product">
-			<div></div>
-			</a> Abby doesn't know what this is-->
 			<div id="products">
 <?php foreach($products as $product){?>
-			<img class='product_img' src='/assets/images/<?=$product["category"]?>/<?=$product["img"]?>/'>
+			<div class="productlist">
+			<a href="/products/productView/<?=$product['id']?>">
+			<img class='product_img' src='/assets/images/<?=$product["category"]?>/<?=$product["img"]?>'></a><p><?=$product['name']?></p>
+			</div>
 <?php } ?>
 			</div>
 			<a  id="page_one" href="?">1</a>

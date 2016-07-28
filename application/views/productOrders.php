@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</tr>
 <?php 	foreach($products as $product){?>
 			<tr class="products">
-				<td><img src="/assets/images/<?=$product['img']?>"></td>
+				<td><img src="/assets/images/<?=$product['category']?>/<?=$product['img']?>"></td>
 				<td><?=$product['id']?></td>
 				<td><?=$product['name']?></td>
 				<td><?=$product['quantity']?></td>

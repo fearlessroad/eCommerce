@@ -44,8 +44,13 @@ class Products extends CI_Controller{
 	}
 
 	// click image to see product_view
-	public function productView(){
-		$this->load->view('productDescription');
+	public function productView($id){
+		$this->load->model('product');
+		$products = $this->product->getByID($id);
+		$similars = $this->product->getSimilarItems($products['categoryID']);
+		$data = array('products'=>$products,
+					   'similars'=>$similars);
+		$this->load->view('productDescription',$data);
 	}
 
 	public function shoppingcart(){
