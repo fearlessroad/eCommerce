@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dashboard Orders</title>
-	<link rel="stylesheet" types="text/css" href="/CSS/dashboardorders.css">
+	<link rel="stylesheet" types="text/css" href="/assets/css/dashboardorders.css">
 
 	</style>
 </head>
