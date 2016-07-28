@@ -4,9 +4,13 @@
 }
 #container{
 	width: 970px;
+	margin:0 auto;
 }
-div{
-	border: 1px dotted black;
+img{
+	height:50px;
+	width:auto;
+	margin:5px;
+	border:1px dotted black;
 }
 h1, #orders, #products, #logOff{
 	display: inline-block;
@@ -32,6 +36,11 @@ h1, #orders, #products, #logOff{
 #picture{
 	width: 180px;
 }
+#productsArea{
+	height:400px;
+	overflow:scroll;
+	margin-top:10px;
+}
 #id{
 	width: 70px;
 }
@@ -50,14 +59,11 @@ h1, #orders, #products, #logOff{
 .actions{
 	margin-left: 40px;
 }
-#productsArea{
-	height: 400px;
-}
 .headRow{
-	height: 25px;
+	height: 20px;
 }
 .products{
-	height: 80px;
+	height: 40px;
 	border: 1px solid black;
 }
 tr:nth-child(odd){

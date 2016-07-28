@@ -6,13 +6,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="UTF-8">
 	<title>A Web Page</title>
-	<link rel="stylesheet" type="text/css" href="/assets/css/dashBoardProductView.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/dashBoardProductView.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-<img id="coolcat" src="/assets/images/coolcat.png" alt="">
 <div id="container">
 	<div id="header">
 		<h1>Dashboard</h1>
@@ -25,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<button id="addButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add new product</button>
 	</div>
 	<div id="productsArea">
-		<table>
+		<table id="productlist">
 			<tr>
 				<th class="headRow" id="picture">Picture</th>
 				<th class="headRow" id="id">ID</th>
@@ -34,38 +33,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<th class="headRow" id="quantity">Quantity sold</th>
 				<th class="headRow" id="action">action</th>
 			</tr>
+<?php 	foreach($products as $product){?>
 			<tr class="products">
-				<td>img</td>
-				<td>1</td>
-				<td>t-shirt</td>
-				<td>123</td>
-				<td>1000</td>
+				<td><img src="/assets/images/<?=$product['img']?>"></td>
+				<td><?=$product['id']?></td>
+				<td><?=$product['name']?></td>
+				<td><?=$product['quantity']?></td>
+				<td>0</td>
 				<td><a class="actions" href="">edit</a><a class="actions" href="">delete</a></td>
 			</tr>
-			<tr class="products">
-				<td>img</td>
-				<td>1</td>
-				<td>t-shirt</td>
-				<td>123</td>
-				<td>1000</td>
-				<td><a class="actions" href="">edit</a><a class="actions" href="">delete</a></td>
-			</tr>
-			<tr class="products">
-				<td>img</td>
-				<td>1</td>
-				<td>t-shirt</td>
-				<td>123</td>
-				<td>1000</td>
-				<td><a class="actions" href="">edit</a><a class="actions" href="">delete</a></td>
-			</tr>
-			<tr class="products">
-				<td>img</td>
-				<td>1</td>
-				<td>t-shirt</td>
-				<td>123</td>
-				<td>1000</td>
-				<td><a class="actions" href="">edit</a><a class="actions" href="">delete</a></td>
-			</tr>
+<?php } ?>
 		</table>
 	</div>
 	<div>
@@ -86,39 +63,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="modal-body">
 			<table>
-				<form>
+				<form action="/products/addproduct/" method="POST">
 					<tr>
 						<td>Name</td>
-						<td><input type="text" name="" placeholder="hat"></td>
+						<td><input type="text" name="productName"></td>
 					</tr>
 					<tr>
 						<td>Description</td>
-						<td><textarea></textarea></td>
+						<td><textarea name="description"></textarea></td>
 					</tr>
 					<tr>
 						<td>Categories</td>
 						<td>
-							<select>
-								<option>Shirt $editButton $trashBin</option>
-								<option>Hat $editButton $trashBin</option>
-								<option>Mug $editButton $trashBin</option>
+							<select name="categoryDrop">
+<?php foreach($categories as $category){?>
+								<option value="<?=$category['name']?>"><?=$category['name']?></option>
+<?php } ?>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td>or add new category:</td>
-						<td><input type="text" name=""></td>
+						<td><input type="text" name="categoryWrite"></td>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td><input type="text" name="price"></td>
+					</tr>
+					<tr>
+						<td>Quantity</td>
+						<td><input type="type" name="quantity"></td>
 					</tr>
 					<tr>
 						<td>Images</td>
-						<td><button>Upload</button></td>
+						<td><input type="text" name="image"></td>
 					</tr>
-				</form>
 			</table>
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success">Add</button>
+				</form>
         </div>
       </div>
     </div>
