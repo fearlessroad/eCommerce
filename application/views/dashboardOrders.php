@@ -78,7 +78,7 @@
 						<select name="Shipped">
 							<option value="Shipped">Shipped</option>
 							<option value="Order in process">Order in process</option>
-							<option value="Order in process">Order in process
+							<option value="Cancelled">Cancelled</option>
 							</option>
 						</select>
 					</td>
