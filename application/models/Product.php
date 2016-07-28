@@ -7,34 +7,21 @@ class Product extends CI_Model {
 		$query = "INSERT INTO products (name, description, price, quantity, category_id, img, updated_at, created_at)
 		VALUES (?, ?, ?, ?, ?, ?, NOW(), NOW())";
 		$this->db->query($query, $data);
-<<<<<<< HEAD
 	}	
-=======
-	}
-
->>>>>>> master
 	public function getCategoryID($category){
 		$query = "SELECT id from categories WHERE name=?";
 		return $this->db->query($query, array($category))->row_array();
 	}
-<<<<<<< HEAD
 	public function getAllProducts(){
-		$query = "SELECT * FROM products";
+		$query = "SELECT products.img, products.name, categories.name as category 
+				  from products
+				  join categories on categories.id = products.category_id";
 		return $this->db->query($query)->result_array();
 	}
-=======
-
->>>>>>> master
 	public function getAllCategories(){
 		$query = "SELECT name from categories";
 		return $this->db->query($query)->result_array();
 	}
-
-	public function getAllProducts(){
-		$query = "SELECT * FROM products";
-		return $this->db->query($query)->result_array();
-	}
-	
 	public function ifExists($name){
 		$query = "SELECT * FROM categories WHERE name = ?";
 		return $this->db->query($query, array($name))->row_array();
@@ -44,8 +31,3 @@ class Product extends CI_Model {
 		return $this->db->query($query, array($name));
 	}
 }
-<<<<<<< HEAD
-=======
-	
-
->>>>>>> master

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Shopping Cart</title>
-	<link rel="stylesheet" href="/assests/css/shoppingcart.css">
+	<link rel="stylesheet" href="/assets/css/shoppingcart.css">
 	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<script>

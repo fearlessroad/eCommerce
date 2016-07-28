@@ -3,11 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller{
 	public function index(){
-		$this->load->view('productListing');
+		$this->load->model('product');
+		$products = $this->product->getAllProducts();
+		$data = array('products'=>$products);
+		$this->load->view('productListing',$data);
 	}
 	public function addProduct(){
 		$this->load->model('product');
-
 		if($this->input->post('categoryWrite')==null){
 			$category = $this->input->post('categoryDrop');
 		}
@@ -36,10 +38,10 @@ class Products extends CI_Controller{
 		$this->product->addProduct($data);
 		redirect('dashboards/showproducts');
 	}
-	// public function getAll(){
-	// 	$this->load->model('product');
-	// 	$products = $this->product->getAll();
-	// }
+	public function getAll(){
+		$this->load->model('product');
+		$products = $this->product->getAll();
+	}
 
 	// click image to see product_view
 	public function productView(){

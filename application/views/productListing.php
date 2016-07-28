@@ -10,9 +10,7 @@
 	<div id="wrapper">
 		<div id="header">
 			<h2>The Unpopped Kernel</h2> 
-		</div>
-
-			
+		</div>			
 		<div id="categories">
 			<ul>
 				<li><a href="">Designer Babies</a></li>
@@ -22,11 +20,10 @@
 				<form  id="search" action="?" method="post">
 				<li><label><input type="text" name="product_name"></label></li>
 				<li><input id="button" type="submit" name="Submit"></li></form>
-				<li><img id="cart" src="/assets/images/shoppingcart.png"></li>
+				<li><a href="/products/shoppingcart/"><img id="cart" src="/assets/images/shoppingcart.png"></a></li>
 	<!-- <a id="shoppingCart" href="/products/shoppingcart/">Shopping Cart (<?= $total; ?>)</a> --> <!--Tom working on: need to tie in # of prods in cart-->
 			</ul>
 		</div>
-
 		<div id="main">
 			<h1>Some product (page #)</h1>
 			<a  id="first" href="?">First</a>
@@ -41,14 +38,13 @@
 					</select>
 				</label>
 			</form>
-
-			
-			<a href="/products/show_product">
+<!-- 			<a href="/products/show_product">
 			<div></div>
-			</a>
-
+			</a> Abby doesn't know what this is-->
 			<div id="products">
-				
+<?php foreach($products as $product){?>
+			<img class='product_img' src='/assets/images/<?=$product["category"]?>/<?=$product["img"]?>/'>
+<?php } ?>
 			</div>
 			<a  id="page_one" href="?">1</a>
 			<a id="page_two" href="?">2</a>
