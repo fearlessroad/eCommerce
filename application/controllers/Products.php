@@ -17,6 +17,7 @@ class Products extends CI_Controller{
 		// check if author exists
 		$check = $this->product->IfExists($category);
 
+
 		// don't add if category already exists
 		if($check==null){
 			$this->product->addCategory($category);
@@ -39,4 +40,13 @@ class Products extends CI_Controller{
 	// 	$this->load->model('product');
 	// 	$products = $this->product->getAll();
 	// }
+
+	// click image to see product_view
+	public function productView(){
+		$this->load->view('product_view');
+	}
+
+	public function shoppingcard(){
+		$this->load->view('shippingcart');
+	}
 }
