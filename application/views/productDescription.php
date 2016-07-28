@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <head>
 	<title>The Unpooped Kernel</title>
-	<link rel="stylesheet" type="text/css" href=<? echo base_url();?>/css/productview.css>
+	<link rel="stylesheet" type="text/css" href=<? echo base_url();?>/css/productDescription.css>
 
 </head>
 
@@ -21,7 +21,7 @@
 		</p>
 		
 	
-	<form action="?" method="post">
+	<form action="/products/shoppingcart/" method="post">
 		<label>
 			<select>
 				<option>1 </option>
@@ -29,7 +29,7 @@
 				<option>3</option>
 			</select>
 		</label>
-		<button>Buy</button>
+		<input type="submit" value="Buy">
 	</form>
 
 	</div>

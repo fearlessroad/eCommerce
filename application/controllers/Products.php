@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller{
 	public function index(){
-		$this->load->view('mainview');
+		$this->load->view('productListing');
 	}
 	public function addProduct(){
 		$this->load->model('product');
@@ -43,10 +43,10 @@ class Products extends CI_Controller{
 
 	// click image to see product_view
 	public function productView(){
-		$this->load->view('product_view');
+		$this->load->view('productDescription');
 	}
 
-	public function shoppingcard(){
-		$this->load->view('shippingcart');
+	public function shoppingcart(){
+		$this->load->view('shoppingcart');
 	}
 }

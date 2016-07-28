@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Shopping Cart</title>
-	<link rel="stylesheet" href="CSS/shopping.css">
+	<link rel="stylesheet" href="/assests/css/shoppingcart.css">
 	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<script>
@@ -13,12 +13,12 @@
 </head>
 <body>
 	<div class ="container">
-		<table>
+		<table id="cart">
 			<thead>
-				<th>Item</th>
-				<th>Price</th>
-				<th>Quantity</th>
-				<th>Total</th>
+				<th class="tableHead" id="Item">Item</th>
+				<th class="tableHead" id="Price">Price</th>
+				<th class="tableHead" id="Quantity">Quantity</th>
+				<th class="tableHead" id="Total">Total</th>
 			</thead>
 			<tbody>
 				<td>Item Name</td>
@@ -27,6 +27,14 @@
 				<td>Total Price</td>
 			</tbody>
 		</table>
+
+		<p>Total: <!--pull sub total from table above--></p>
+		<form action="/products/index/">
+		<input type="submit" value="Continue Shopping">
+		</form>
+
+
+
 		<form action="" method="POST" id="payment-form">
 			<div id="payment">
 				<div id="shipment">

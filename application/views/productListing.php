@@ -3,12 +3,12 @@
 <meta charset="utf-8">
 <head>
 	<title>The Unpopped Kernel</title>
-	<link rel="stylesheet" type="text/css" href="/assets/css/mainview.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/productlisting.css">
 </head>
 <body>
 <div id="header">
 	<h2>The Unpopped Kernel</h2> 
-	<p id="shop">Shopping Cart(?)</p>
+	<a id="shoppingCart" href="/products/shoppingcart/">Shopping Cart (<?= $total; ?>)</a> <!--Tom working on: need to tie in # of prods in cart-->
 </div>
 
 	

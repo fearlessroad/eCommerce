@@ -9,22 +9,21 @@ class Product extends CI_Model {
 		$this->db->query($query, $data);
 	}
 
-
-	public function getAllCategories(){
-		$query = "SELECT * FROM categories";
-		return $this->db->query($query)->results_array();
-	}
-
 	public function getCategoryID($category){
 		$query = "SELECT id from categories WHERE name=?";
 		return $this->db->query($query, array($category))->row_array();
 	}
 
-	public function getAllProducts(){
-		$query = "SELECT * FROM products";
-		return $this->db->query($query)->results_array();
+	public function getAllCategories(){
+		$query = "SELECT name from categories";
+		return $this->db->query($query)->result_array();
 	}
 
+	public function getAllProducts(){
+		$query = "SELECT * FROM products";
+		return $this->db->query($query)->result_array();
+	}
+	
 	public function ifExists($name){
 		$query = "SELECT * FROM categories WHERE name = ?";
 		return $this->db->query($query, array($name))->row_array();
