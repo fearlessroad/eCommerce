@@ -16,11 +16,16 @@ class Dashboards extends CI_Controller {
 		}
 	}
 	public function showProducts(){
+		$this->load->model('product');
 		if($this->session->userdata('loggedin')!=true){
 			redirect('dashboards/index');
 		}
 		else{
-			$this->load->view("dashboardProductView");
+			$categories = $this->product->getAllCategories();
+			$products = $this->product->getAllProducts();
+			$data = array('products'=>$products,
+							'categories'=>$categories);
+			$this->load->view("dashboardProductView", $data);
 		}
 	}
 	public function login(){
