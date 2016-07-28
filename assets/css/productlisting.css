@@ -23,6 +23,9 @@
 			height:50px;
 			float:right;
 			vertical-align: top;
+			position:relative;
+			bottom:15px;
+		}
 /*=======*/
 /*		#shoppingCart{
 			
@@ -36,7 +39,6 @@
 			left:1090px;  
 			bottom:50px;
 >>>>>>> master*/
-		}
 		#search_box
 		{
 			width:200px;
