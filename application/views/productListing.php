@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/productlisting.css">
 </head>
 <body>
-<<<<<<< HEAD:application/views/mainview.php
+<!-- <<<<<<< HEAD:application/views/mainview.php -->
 	<div id="wrapper">
 		<div id="header">
 			<h2>The Unpopped Kernel</h2> 
@@ -23,6 +23,7 @@
 				<li><label><input type="text" name="product_name"></label></li>
 				<li><input id="button" type="submit" name="Submit"></li></form>
 				<li><img id="cart" src="/assets/images/shoppingcart.png"></li>
+	<!-- <a id="shoppingCart" href="/products/shoppingcart/">Shopping Cart (<?= $total; ?>)</a> --> <!--Tom working on: need to tie in # of prods in cart-->
 			</ul>
 		</div>
 
@@ -54,10 +55,9 @@
 
 		</div>
 	</div>
-=======
-<div id="header">
+<!-- ======= -->
+<!-- <div id="header">
 	<h2>The Unpopped Kernel</h2> 
-	<a id="shoppingCart" href="/products/shoppingcart/">Shopping Cart (<?= $total; ?>)</a> <!--Tom working on: need to tie in # of prods in cart-->
 </div>
 
 	
@@ -175,7 +175,7 @@
 	<a id="page_two" href="?">2</a>
 
 </div>
-
->>>>>>> master:application/views/productListing.php
+ -->
+<!-- >>>>>>> master:application/views/productListing.php -->
 </body>
 </html>

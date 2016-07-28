@@ -36,8 +36,6 @@ class Products extends CI_Controller{
 		$this->product->addProduct($data);
 		redirect('dashboards/showproducts');
 	}
-<<<<<<< HEAD
-=======
 	// public function getAll(){
 	// 	$this->load->model('product');
 	// 	$products = $this->product->getAll();
@@ -51,5 +49,4 @@ class Products extends CI_Controller{
 	public function shoppingcart(){
 		$this->load->view('shoppingcart');
 	}
->>>>>>> master
 }
