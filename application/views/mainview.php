@@ -34,7 +34,7 @@
 	<a  id="prev" href="?">Prev</a>
 	<a  id="" href="?">#</a>
 	<a id="next" href="?">Next</a><br>	
-	<form action="?" method="post">
+	<form action="" method="post">
 		<label>
 			<select>
 				<option>Price</option>
@@ -44,7 +44,7 @@
 	</form>
 
 	
-	<a href="/products/show_product">
+	<a href="/products/productView">
 	<div></div>
 	</a>
 	

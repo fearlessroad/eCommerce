@@ -36,3 +36,19 @@ SELECT * FROM admins;
 INSERT INTO admins (email, password, updated_at, created_at)
 VALUES ('poop@gmail.com', md5('1'), NOW(), NOW());
 
+-- quantity sold
+SELECT products.img, products.id, products.name, products.quantity, COUNT(orders.id) as quantitySold 
+FROM products
+LEFT JOIN order_details ON order_details.product_id = products.id
+LEFT JOIN orders ON orders.id = order_details.order_id
+WHERE products.id = 4;
+
+-- get orders
+SELECT * FROM orders;
+SELECT * FROM order_details;
+
+-- place an order
+INSERT INTO orders (status, stripe_id, user_id, updated_at, created_at)
+VALUE ('Shipped', 1, 1, NOW(), NOW());
+INSERT INTO order_details (order_id, product_id, updated_at, created_at)
+VALUE (1, 4, NOW(), NOW());

@@ -9,6 +9,7 @@
 
 
 <body>
+	<a href="/products">Go Back</a>
 	<h1>Some product</h1>
 	<div id="picture">
 		Some picture of product 
