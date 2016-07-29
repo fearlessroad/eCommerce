@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dashboard Orders</title>
-	<link rel="stylesheet" types="text/css" href="/CSS/dashboardorders.css">
+	<link rel="stylesheet" types="text/css" href="/assets/css/dashboardorders.css">
 
 	</style>
 </head>
@@ -11,9 +11,9 @@
 	<div id='wrapper'>
 		<div id="header">
 			<h1>Dashboard</h1>
-			<a id="orders" href="">Orders</a>
-			<a id="products" href="">Products</a>
-			<a href="logout" href="">Logout</a>
+			<a id="orders" href="/dashboards/showorders/">Orders</a>
+			<a id="products" href="/dashboards/showproducts/">Products</a>
+			<a id="logOff" href="/dashboards/logout">log off</a>
 		</div>
 
 		<div id="order">

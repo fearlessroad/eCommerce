@@ -3,19 +3,19 @@
 		width:600px;
 		margin: 0 auto;
 	}
-	table{
-		vertical-align: top;
-		border-collapse: collapse;
-		border:1px solid black;
-		font-size:12px;
-		font-family:sans-serif;
-		margin:0 auto;
-		width:600px;
+	#cart{
+		height: 400px;
 	}
-	td, th {
+	.tableHead{
+    height: 25px;
+	}
+
+
+	/*td, th {
 		border:1px solid black;
 		padding:5px;
 	}
+	*/
 	tr:nth-child(odd){
 		background-color:#cccccc;
 	}
