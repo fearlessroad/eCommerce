@@ -37,7 +37,7 @@ class Product extends CI_Model {
 		return $this->db->query($query, array($id))->row_array();
 	}
 	public function getSimilarItems($id){
-		$query = "SELECT products.img, products.id from products 
+		$query = "SELECT products.img, products.id, categories.name as category from products
 			JOIN categories on products.category_id = categories.id 
 			WHERE categories.id = ?
 			order by RAND()

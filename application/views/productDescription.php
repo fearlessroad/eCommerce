@@ -46,7 +46,7 @@
 	<div id="similar_items">
 		<h2>Similar Items</h2>
 <?php foreach($similars as $similar){?>
-	<a href="/products/productView/<?=$products['id']?>"><img src="/assets/<?=$products['categoryID']?>/<?=$similar['img']?>"></a>
+	<a href="/products/productView/<?=$similar['id']?>"><img class="small_pic" src="/assets/images/<?=$similar['category']?>/<?=$similar['img']?>"></a>
 <?php } ?>
 
 	</div>
