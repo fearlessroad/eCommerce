@@ -14,7 +14,7 @@
 <body>
 <?php 	
 $data = $this->session->userdata();
-var_dump($data); die();															//Tom's work for updating cart totals 
+//Tom's work for updating cart totals 
 	$total = 0;
 	foreach($products as $product)
 	{

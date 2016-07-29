@@ -38,6 +38,22 @@
 					<th class="tableHead" id="total">Total</th>
 					<th class="tableHead" id="status">Status</th>
 				</tr>
+					<!-- foreach () -->
+			<?php
+			// var_dump($products); die();
+			foreach ($products as $product){
+			?>
+				<tr class="orderRow">
+					<td><?=$product['Order ID']?></td>
+					<td><?=$product['Name']?></td>
+					<td><?=$product['Date']?></td>
+					<td><?=$product['Billing Address']?></td>
+					<td><?=$product['Total']?></td>
+					<td><?=$product['Status']?></td>
+				</tr>
+			<?php
+			}
+			?>
 				<tr class="orderRow">
 					<td></td>
 					<td></td>
