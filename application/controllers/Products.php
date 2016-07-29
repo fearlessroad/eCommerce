@@ -14,7 +14,8 @@ class Products extends CI_Controller{
 		$quantity = $this->session->userdata($id);
 		$quantity = $this->input->post('qty');
 		$this->session->set_userdata($id, $quantity);
-		redirect('products/shoppingcart');
+
+		redirect('/products/shoppingcart');
 	}
 	public function shoppingcart($id){
 		$this->load->view('shoppingcart');

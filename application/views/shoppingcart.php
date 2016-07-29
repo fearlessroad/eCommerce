@@ -12,7 +12,9 @@
 	</script>
 </head>
 <body>
-<?php 																//Tom's work for updating cart totals 
+<?php 	
+$data = $this->session->userdata();
+//Tom's work for updating cart totals 
 	$total = 0;
 	foreach($products as $product)
 	{
@@ -27,7 +29,7 @@
 					<p>Quantity: {$this->session->userdata($item['id'])}</p>
 					<form action='/products/removecart/{$item['id']}' method='post'>
 						<select name='qty'>";
-						for ($i=1; $i<=$this->session->userdata($product['id']); $i++)
+						for ($i=1; $i<= $this->session->userdata($product['id']); $i++)
 						{
 							echo "<option>{$i}</option>";
 						}

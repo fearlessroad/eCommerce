@@ -27,17 +27,6 @@
 	<h1><?=$products['name']?></h1>
 		<img id = "picture" src="/assets/images/<?=$products['category']?>/<?=$products['img']?>"> 
 
-<?php 											//Tom's cart total updating
-				$total = 0;
-				foreach($products as $product)
-				{
-					$temp = $this->session->userdata($products['id']);
-					$total += $temp;
-				}
-
-?>
-
-
 	<div id="product_info">
 		<p><?=$products['description']?></p>
 	<form action="/products/addCart/<?=$products['id']?>" method="post">

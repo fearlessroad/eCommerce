@@ -12,7 +12,12 @@ class Dashboards extends CI_Controller {
 			redirect('dashboards/index');
 		}
 		else{
-			$this->load->view("mainDashboard");
+			$this->load->model('product');
+			$products = $this->product->getDashboardOrders();
+			$data = array(
+					'products'=>$products
+					);	
+			$this->load->view("mainDashboard", $data);
 		}
 	}
 	public function showProducts(){

@@ -33,7 +33,6 @@
 			<h2>The Unpopped Kernel</h2> 
 		</div>			
 		<div id="categories">
-
 			<ul>
 				<li><a id="babies" class="nav" href="#">Designer Babies</a></li>
 				<li><a id="toiletseatart" class="nav" href="#">Toilet Seat Art</a></li>
