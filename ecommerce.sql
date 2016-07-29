@@ -26,6 +26,7 @@ VALUES ('Chris', 'B', 'c@gmail.com', 'c', NOW(), NOW());
 
 -- get all addresses
 SELECT * FROM addresses;
+
 -- add address
 INSERT INTO addresses (address1, address2, city, state, zip, updated_at, created_at, user_id)
 VALUES (123, 'Apt 1', 'Burbank', 'CA', 91234, NOW(), NOW(), 1);
@@ -48,7 +49,49 @@ SELECT * FROM orders;
 SELECT * FROM order_details;
 
 -- place an order
+INSERT INTO users (first_name, last_name, email, password, updated_at, created_at)
+VALUES ('Tom', 'B', 'b@gmail.com', 'b', NOW(), NOW());
+INSERT INTO addresses (address1, address2, city, state, zip, updated_at, created_at, user_id)
+VALUES (123, 'Apt 1', 'Burbank', 'CA', 91234, NOW(), NOW(), 2);
+INSERT INTO addresses (address1, address2, city, state, zip, updated_at, created_at, user_id)
+VALUES (1, '', 'Pasadena', 'CA', 91111, NOW(), NOW(), 2);
+
+
 INSERT INTO orders (status, stripe_id, user_id, updated_at, created_at)
-VALUE ('Shipped', 1, 1, NOW(), NOW());
+VALUE ('Order in process', 00000, 2, NOW(), NOW());
+
+INSERT INTO billing_addresses (address_id, order_id)
+VALUE (3,1);
+
+INSERT INTO shipping_addresses (address_id, order_id)
+VALUE (4,1);
+
 INSERT INTO order_details (order_id, product_id, updated_at, created_at)
-VALUE (1, 4, NOW(), NOW());
+VALUE (1, 1, NOW(), NOW());
+
+-- main dashboard
+SELECT order_details.order_id 'Order ID', users.first_name Name, order_details.created_at Date, 
+CONCAT_WS(' ',addresses.address1,addresses.address2, addresses.city, addresses.state, addresses.zip) 'Billing Address', 
+orders.status Status,  products.price -- SUM(products.price) Total -- addresses.address_type Type
+FROM users
+JOIN addresses ON addresses.user_id = users.id
+JOIN billing_addresses ON addresses.id = billing_addresses.address_id
+JOIN orders ON orders.user_id =  users.id
+JOIN order_details ON order_details.order_id = orders.id
+JOIN products ON products.id = order_details.product_id
+WHERE users.id = 2;
+
+-- individual order
+SELECT orders.id, 
+-- customer shipping info
+CONCAT_WS(users.first_name, users.last_name) shippingName, addresses.address1 shippingAddress1, -- change to shipping.blahblah now
+addresses.address2 shippingAddress2, addresses.city shippingCity, addresses.state shippingState, addresses.zip shippingZip, 
+-- customer billing info
+CONCAT_WS(users.first_name, users.last_name) billingName, addresses.address1 billingAddress1, 
+addresses.address2 billingAddress2, addresses.city billingCity, addresses.state billingState, addresses.zip billingZip, 
+-- product details
+products.id, products.name, products.price, orders.status -- quantity of each products / total of each product*quantity
+FROM orders
+JOIN users ON users.id = orders.user_id
+JOIN addresses shipping ON addresses.user_id = users.id
+
