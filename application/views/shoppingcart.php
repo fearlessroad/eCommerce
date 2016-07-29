@@ -40,8 +40,6 @@
 	}
 	echo "<h3>Total Price : \${total}</h3>"
 	?>
-
-
 <!--	<div class ="container">
 		<table id="cart">
 			<thead>
@@ -74,9 +72,6 @@
 				<li><a href="/products/shoppingcart/"><img id="cart" src="/assets/images/shoppingcart.png"></a></li>
 		</ul>
 		</div>
-		<form action="/products/index/">
-		<input type="submit" value="Continue Shopping">
-		</form>
 
 
 
@@ -126,6 +121,9 @@
     					data-locale="auto"
     					data-zip-code="true">
   					</script>
+		<form action="/products/index/">
+		<input type="submit" value="Continue Shopping">
+		</form>
 				</div>
 			</div>
 		</form>

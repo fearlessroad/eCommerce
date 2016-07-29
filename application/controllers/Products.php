@@ -16,13 +16,6 @@ class Products extends CI_Controller{
 		$this->session->set_userdata($id, $quantity);
 		redirect('products/shoppingcart');
 	}
-
-
-	// click image to see product_view
-	//public function productView(){
-	//	$this->load->view('productDescription');
-	//}
-
 	public function shoppingcart($id){
 		$this->load->view('shoppingcart');
 	}
@@ -73,8 +66,11 @@ class Products extends CI_Controller{
 		$this->load->view('productDescription',$data);
 	}
 
-	//public function shoppingcart(){
-	//	$this->load->view('shoppingcart');
-	//}
+	public function getProductsByCategory($name){
+		$this->load->model('product');
+		$jquery = $this->product->getProductsByCategory($name);
+		$whatever = array('jquery'=>$jquery);
+		$this->load->view('partials/jquery', $whatever);
+	}
 
 }

@@ -44,4 +44,11 @@ class Product extends CI_Model {
 			LIMIT 4";
 		return $this->db->query($query, array($id))->result_array();
 	}
+	public function getProductsByCategory($name){
+		$query = "SELECT products.img, products.name, products.id, categories.name as category from products
+			JOIN categories on products.category_id = categories.id 
+			WHERE categories.name = ?
+			order by RAND()";
+		return $this->db->query($query, array($name))->result_array();
+	}
 }
