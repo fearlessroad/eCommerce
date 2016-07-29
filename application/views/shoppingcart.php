@@ -3,7 +3,7 @@
 <head>
 	<title>Shopping Cart</title>
 	<link rel="stylesheet" href="/assets/css/shoppingcart.css">
-	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -12,37 +12,7 @@
 	</script>
 </head>
 <body>
-<?php 																//Tom's work for updating cart totals 
-	$total = 0;
-	foreach($product as $product)
-	{
-		$temp = $product['price'] * $this->session->userdata($item['id']);
-		$total += $temp;
-		if($this->session->userdata($item['id']) >0)
-		{
-			echo "<div class='item'>
-					<div class='description'>
-					<p>Name: {$product['name']}</p>
-					<p>Price: \${$product['price']}</p>
-					<p>Quantity: {$this->session->userdata($item['id'])}</p>
-					<form action='/items/removecart/{$item['id']}' method='post'>
-						<select name='qty'>";
-						for ($i=1; $i<=$this->session->userdata($product['id']); i++)
-						{
-							echo "<option>{$i}</option>";
-						}
-						echo "</select>
-						<input type='submit' value="Remove">
-					</form>
-				</div>
-			</div>"; 
-		}
-	}
-	echo "<h3>Total Price : \${total}</h3>"
-	?>
-
-
-<!--	<div class ="container">
+	<div class ="container">
 		<table id="cart">
 			<thead>
 				<th class="tableHead" id="Item">Item</th>
@@ -51,13 +21,13 @@
 				<th class="tableHead" id="Total">Total</th>
 			</thead>
 			<tbody>
-				<td>Item Name</td>
-				<td>Item Price</td>
-				<td>Item Quantity</td>
-				<td>Total Price</td>
+				<td><?=$data['name']?></td>
+				<td><?=$data['price']?></td>
+				<td><?=$data['quantity']?></td>
+				<td><?=$data['price']?></td>
 			</tbody>
 		</table>
--->
+
 		
 		<form action="/products/index/">
 		<input type="submit" value="Continue Shopping">
@@ -101,7 +71,7 @@
 					<input type="text" name="state"><br>
 					<label>Zipcode</label>
 					<input type="text" name="zipcode"><br>
-					<script
+<!--					<script
     					src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     					data-key="pk_test_BKJLSNKJkOkrl1UufIl8SHEz"
     					data-amount="999"
@@ -109,8 +79,8 @@
     					data-description="Widget"
     					data-image="/img/documentation/checkout/marketplace.png"
     					data-locale="auto"
-    					data-zip-code="true">
-  					</script>
+    					data-zip-code="true"> 	
+  					</script>	-->
 				</div>
 			</div>
 		</form>

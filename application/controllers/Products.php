@@ -10,21 +10,35 @@ class Products extends CI_Controller{
 		$this->load->view('productListing',$data);
 	}
 	
-	public function addCart($id){								//Tom added & needs; please don't delete
-		$quantity = $this->session->userdata($id);
-		$quantity = $this->input->post('qty');
-		$this->session->set_userdata($id, $quantity);
-		redirect('/items');
+	public function addCart($id){			//Tom added & needs; please don't delete
+		
+		if($this->session->userdata('product')==null){
+			$products = array();
+			$this->session->set_userdata('product',$products);
+		}
+			$data=$this->session->userdata('product');
+			array_push($data, $id);
+			
+			$this->session->set_userdata('product', $data);
+		
+		redirect('products/shoppingcart');
 	}
 
-
-	// click image to see product_view
+		// click image to see product_view
 	//public function productView(){
 	//	$this->load->view('productDescription');
 	//}
 
 	public function shoppingcart(){
-		$this->load->view('shoppingcart');
+		$this->load->model('product');
+		
+
+		$temp=$this->session->userdata('product');
+		
+		$data= array('temp'=>$temp);
+		//
+		$this->load->view('shoppingcart', $data);
+
 	}
 
 	public function addProduct(){								//this adds products to the database from edit product
@@ -66,9 +80,9 @@ class Products extends CI_Controller{
 	// click image to see product_view
 	public function productView($id){
 		$this->load->model('product');
-		$products = $this->product->getByID($id);
-		$similars = $this->product->getSimilarItems($products['categoryID']);
-		$data = array('products'=>$products,
+		$product = $this->product->getByID($id);
+		$similars = $this->product->getSimilarItems($product['categoryID']);
+		$data = array('product'=>$product,
 					   'similars'=>$similars);
 		$this->load->view('productDescription',$data);
 	}
