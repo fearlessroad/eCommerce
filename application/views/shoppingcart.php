@@ -12,7 +12,37 @@
 	</script>
 </head>
 <body>
-	<div class ="container">
+<?php 
+	$total = 0;
+	foreach($product as $product)
+	{
+		$temp = $product['price'] * $this->session->userdata($item['id']);
+		$total += $temp;
+		if($this->session->userdata($item['id']) >0)
+		{
+			echo "<div class='item'>
+					<div class='description'>
+					<p>Name: {$product['name']}</p>
+					<p>Price: \${$product['price']}</p>
+					<p>Quantity: {$this->session->userdata($item['id'])}</p>
+					<form action='/items/removecart/{$item['id']}' method='post'>
+						<select name='qty'>";
+						for ($i=1; $i<=$this->session->userdata($product['id']); i++)
+						{
+							echo "<option>{$i}</option>";
+						}
+						echo "</select>
+						<input type='submit' value="Remove">
+					</form>
+				</div>
+			</div>"; 
+		}
+	}
+	echo "<h3>Total Price : \${total}</h3>"
+	?>
+
+
+<!--	<div class ="container">
 		<table id="cart">
 			<thead>
 				<th class="tableHead" id="Item">Item</th>
@@ -27,8 +57,8 @@
 				<td>Total Price</td>
 			</tbody>
 		</table>
-
-		<p>Total: <!--pull sub total from table above--></p>
+-->
+		
 		<form action="/products/index/">
 		<input type="submit" value="Continue Shopping">
 		</form>

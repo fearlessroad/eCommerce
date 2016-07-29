@@ -8,12 +8,24 @@
 <body>
 <!-- <<<<<<< HEAD:application/views/mainview.php -->
 	<div id="wrapper">
+
+	
+
 		<div id="header">
 			<h2>The Unpopped Kernel</h2> 
 		</div>
 
 			
 		<div id="categories">
+			<?php
+				$total = 0;
+				foreach($products as $product)
+				{
+					$temp = $this->session->userdata($product['id']);
+					$total += $temp;
+				}
+			?>
+
 			<ul>
 				<li><a href="">Designer Babies</a></li>
 				<li><a href="">Toilet Seat Art</a></li>

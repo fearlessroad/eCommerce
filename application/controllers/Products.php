@@ -2,10 +2,29 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller{
+	
 	public function index(){
 		$this->load->view('productListing');
 	}
-	public function addProduct(){
+	
+	public function addCart($id){
+		$quantity = $this->session->userdata($id);
+		$quantity = $this->input->post('qty');
+		$this->session->set_userdata($id, $quantity);
+		redirect('/items');
+	}
+
+
+	// click image to see product_view
+	public function productView(){
+		$this->load->view('productDescription');
+	}
+
+	public function shoppingcart(){
+		$this->load->view('shoppingcart');
+	}
+
+	public function addProduct(){								//this adds products to the database from edit product
 		$this->load->model('product');
 
 		if($this->input->post('categoryWrite')==null){
@@ -40,13 +59,4 @@ class Products extends CI_Controller{
 	// 	$this->load->model('product');
 	// 	$products = $this->product->getAll();
 	// }
-
-	// click image to see product_view
-	public function productView(){
-		$this->load->view('productDescription');
-	}
-
-	public function shoppingcart(){
-		$this->load->view('shoppingcart');
-	}
 }
