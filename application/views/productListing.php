@@ -14,15 +14,6 @@
 			<h2>The Unpopped Kernel</h2> 
 		</div>			
 		<div id="categories">
-			<?php 											//Tom's cart total updating
-				$total = 0;
-				foreach($products as $product)
-				{
-					$temp = $this->session->userdata($product['id']);
-					$total += $temp;
-				}
-			?>
-
 			<ul>
 				<li><a class="nav" href="">Designer Babies</a></li>
 				<li><a class="nav" href="">Toilet Seat Art</a></li>
