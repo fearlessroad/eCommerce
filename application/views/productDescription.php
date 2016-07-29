@@ -2,25 +2,34 @@
 <html lang="en">
 <meta charset="utf-8">
 <head>
-	<title>The Unpooped Kernel</title>
-	<link rel="stylesheet" type="text/css" href=<? echo base_url();?>/css/productDescription.css>
+	<title>The Unpopped Kernel</title>
+	<link rel="stylesheet" type="text/css" href="/assets/css/productDescription.css">
 
 </head>
-
-
+<div id="wrapper">
+		<div id="header">
+			<h2>The Unpopped Kernel</h2> 
+		</div>			
+		<div id="categories">
+			<ul>
+				<li><a class="nav" href="">Designer Babies</a></li>
+				<li><a class="nav" href="">Toilet Seat Art</a></li>
+				<li> <a class="nav" href="">My Little Pony Gear</a></li>
+				<li><a class="nav" href="">Apocalypse Kits</a></li>
+				<form  id="search" action="?" method="post">
+				<li><label><input type="text" name="product_name"></label></li>
+				<li><input id="button" type="submit" name="Submit"></li></form>
+				<li><a href="/products/shoppingcart/"><img id="cart" src="/assets/images/shoppingcart.png"></a></li>
+			</ul>
+		</div>
 <body>
-	<a href="/products">Go Back</a>
-	<h1>Some product</h1>
-	<div id="picture">
-		Some picture of product 
-	</div>
+	<a href="/products/">Go Back</a>
+	<h1><?=$products['name']?></h1>
+		<img id = "picture" src="/assets/images/<?=$products['category']?>/<?=$products['img']?>"> 
 
 
 	<div id="product_info">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio libero, lacinia id nulla nec, cursus maximus eros. In aliquet tristique arcu, vitae rutrum enim vehicula sed. Nulla tincidunt mattis est nec vehicula. Suspendisse fringilla orci a eleifend vulputate. Quisque vulputate convallis risus, sit amet porta lorem fermentum et. Cras ac mattis nunc. Cras non interdum justo. Nulla a commodo lacus. Nulla vitae odio a lectus posuere sagittis ac accumsan mi. Nunc ultrices consectetur erat, eu efficitur est consectetur sit amet. Etiam diam felis, suscipit commodo felis eu, gravida consectetur metus. In consequat risus nisi, non maximus eros bibendum ut. Sed ut orci eget eros efficitur varius nec et justo. Curabitur dapibus leo ut mi euismod, non vehicula sem gravida. Curabitur quis neque ex. Nullam malesuada lorem a fermentum auctor.
-		</p>
-		
-	
+		<p><?=$products['description']?></p>
 	<form action="/products/shoppingcart/" method="post">
 		<label>
 			<select>
@@ -36,7 +45,11 @@
 
 	<div id="similar_items">
 		<h2>Similar Items</h2>
-	</div>
+<?php foreach($similars as $similar){?>
+	<a href="/products/productView/<?=$products['id']?>"><img src="/assets/<?=$products['categoryID']?>/<?=$similar['img']?>"></a>
+<?php } ?>
 
+	</div>
+</div>
 </body>
 </html>

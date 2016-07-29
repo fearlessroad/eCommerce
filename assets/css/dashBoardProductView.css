@@ -1,0 +1,74 @@
+*{
+	margin: 0px
+	padding: 0px;
+}
+#container{
+	width: 970px;
+	margin:0 auto;
+}
+img{
+	height:50px;
+	width:auto;
+	margin:5px;
+	border:1px dotted black;
+}
+h1, #orders, #products, #logOff{
+	display: inline-block;
+	color: white;
+	margin: 10px;
+}
+#logOff{
+	margin-left: 550px;
+}
+#header{
+	background-color: #A00006;
+	border: 1px solid black;
+}
+#search{
+	margin: 10px;
+	width: 200px;
+}
+#addButton{
+	margin-left: 600px;
+	color: white;
+	background-color: #007CDE;
+}
+#picture{
+	width: 180px;
+}
+#productsArea{
+	height:400px;
+	overflow:scroll;
+	margin-top:10px;
+}
+#id{
+	width: 70px;
+}
+#name{
+	width: 180px;
+}
+#inventory{
+	width: 200px;
+}
+#quantity{
+	width: 200px;
+}
+#action{
+	width: 150px;
+}
+.actions{
+	margin-left: 40px;
+}
+.headRow{
+	height: 20px;
+}
+.products{
+	height: 40px;
+	border: 1px solid black;
+}
+tr:nth-child(odd){
+	background-color:#CCCCCC;
+}
+.page{
+	margin: 20px 20px 20px 20px;
+}
