@@ -13,8 +13,9 @@
 		#categories{
 			width:790px;
 			height:60px;
-			background:black;
+			background-color:black;
 			padding:5px;
+
 		}
 		#products{
 			padding:10px;
@@ -24,7 +25,7 @@
 			height:100px;
 			width:100px;
 			margin:0 20px;
-			border:1px solid black;
+/*			border:1px solid black;*/
 			display:inline-block;
 		}
 		.productlist{
@@ -38,25 +39,11 @@
 			text-align:center;
 			margin:0;
 		}
-/*<<<<<<< HEAD:assets/css/mainview.css*/
 		#cart{
 			height:40px;
 			vertical-align: top;
 			margin:0;
 		}
-/*=======*/
-/*		#shoppingCart{
-			
-			font-family: sans-serif;
-			display:inline-block; */
-/*>>>>>>> master:assets/css/productlisting.css
-			position:relative;
-<<<<<<< HEAD
-			bottom:15px;
-=======
-			left:1090px;  
-			bottom:50px;
->>>>>>> master*/
 		#search_box
 		{
 			width:200px;
@@ -76,7 +63,6 @@
 			border:1px solid black; 
 			display:inline-block;
 			width:800px; 
-			height:auto;
 /*			padding-left:5px; 
 			margin-left:20px;*/
 			/*position:relative; 
@@ -104,12 +90,12 @@
 			display:inline-block;
 		}
 		#products{
-			height:400px;
-			border:1px solid black;
+			height:450px;
+			overflow:scroll;
 		}
 		#page_one{
 			border-right:1px solid black; 
-			padding-right:10px 
+			padding-right:10px;
 		}
 		#page_two
 		{
