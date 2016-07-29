@@ -27,7 +27,7 @@ $data = $this->session->userdata();
 					<p>Name: {$product['name']}</p>
 					<p>Price: \${$product['price']}</p>
 					<p>Quantity: {$this->session->userdata($item['id'])}</p>
-					<form action='/items/removecart/{$item['id']}' method='post'>
+					<form action='/products/removecart/{$item['id']}' method='post'>
 						<select name='qty'>";
 						for ($i=1; $i<= $this->session->userdata($product['id']); $i++)
 						{
@@ -60,7 +60,22 @@ $data = $this->session->userdata();
 			</tbody>
 		</table>
 -->
-		
+<div id="wrapper">
+		<div id="header">
+			<h2>The Unpopped Kernel</h2> 
+		</div>			
+		<div id="categories">
+		<ul>
+				<li><a class="nav" href="">Designer Babies</a></li>
+				<li><a class="nav" href="">Toilet Seat Art</a></li>
+				<li> <a class="nav" href="">My Little Pony Gear</a></li>
+				<li><a class="nav" href="">Apocalypse Kits</a></li>
+				<form  id="search" action="?" method="post">
+				<li><label><input type="text" name="product_name"></label></li>
+				<li><input id="button" type="submit" name="Submit"></li></form>
+				<li><a href="/products/shoppingcart/"><img id="cart" src="/assets/images/shoppingcart.png"></a></li>
+		</ul>
+		</div>
 		<form action="/products/index/">
 		<input type="submit" value="Continue Shopping">
 		</form>
@@ -116,6 +131,6 @@ $data = $this->session->userdata();
 				</div>
 			</div>
 		</form>
-	</div>
+</div>
 </body>
 </html>

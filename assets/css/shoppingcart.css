@@ -10,12 +10,6 @@
     height: 25px;
 	}
 
-
-	/*td, th {
-		border:1px solid black;
-		padding:5px;
-	}
-	*/
 	tr:nth-child(odd){
 		background-color:#cccccc;
 	}
@@ -53,3 +47,28 @@
 	h4 {
 		margin:10px;
 	}
+	#wrapper{
+			width:800px;
+			height:auto;
+			margin:0 auto;
+			background:linear-gradient(#23819C,#2897B7,#2FAACE,#44B4D5);
+		}
+		#header
+		{
+			display:inline-block;
+			width:800px;
+			text-align:center;
+		}
+		#categories{
+			width:790px;
+			height:60px;
+			background-color:black;
+			padding:5px;
+
+		}
+		.nav{
+			border:1px solid white;
+		}
+		form{
+			display:inline-block;
+		}

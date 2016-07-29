@@ -26,23 +26,15 @@
 	<a href="/products/">Go Back</a>
 	<h1><?=$products['name']?></h1>
 		<img id = "picture" src="/assets/images/<?=$products['category']?>/<?=$products['img']?>"> 
-	<!-- <?php 											//Tom's cart total updating
-				$total = 0;
-				foreach($products as $product)
-				{
-					$temp = $this->session->userdata($product['id']);
-					$total += $temp;
-				}
-			?> -->
 
 	<div id="product_info">
 		<p><?=$products['description']?></p>
-	<form action="/products/shoppingcart/" method="post">
+	<form action="/products/addCart/<?=$products['id']?>" method="post">
 		<label>
-			<select>
-				<option>1 </option>
-				<option>2</option>
-				<option>3</option>
+			<select name="quantity">
+				<option value="1">1 </option>
+				<option value="2">2</option>
+				<option value="3">3</option>
 			</select>
 		</label>
 		<input type="submit" value="Buy">
