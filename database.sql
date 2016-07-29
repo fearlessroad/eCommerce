@@ -35,7 +35,7 @@ CREATE TABLE `addresses` (
   PRIMARY KEY (`id`),
   KEY `fk_addresses_users1_idx` (`user_id`),
   CONSTRAINT `fk_addresses_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-INSERT INTO `addresses` VALUES (2,'123','Apt 1','Burbank','CA','91234','2016-07-27 15:52:31','2016-07-27 15:52:31',1);
+INSERT INTO `addresses` VALUES (2,'123','Apt 1','Burbank','CA','91234','2016-07-27 15:52:31','2016-07-27 15:52:31',1),(3,'123','Apt 1','Burbank','CA','91234','2016-07-28 11:50:37','2016-07-28 11:50:37',2),(4,'1','','Pasadena','CA','91111','2016-07-28 11:50:39','2016-07-28 11:50:39',2);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,6 +73,33 @@ LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
 INSERT INTO `admins` VALUES (1,'poop@gmail.com','c4ca4238a0b923820dcc509a6f75849b','2016-07-27 16:18:16','2016-07-27 16:18:16');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `billing_addresses`
+--
+
+DROP TABLE IF EXISTS `billing_addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `billing_addresses` (
+  `address_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  KEY `fk_billing_addresses_addresses1_idx` (`address_id`),
+  KEY `fk_billing_addresses_orders1_idx` (`order_id`),
+  CONSTRAINT `fk_billing_addresses_addresses1` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_billing_addresses_orders1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `billing_addresses`
+--
+
+LOCK TABLES `billing_addresses` WRITE;
+/*!40000 ALTER TABLE `billing_addresses` DISABLE KEYS */;
+INSERT INTO `billing_addresses` VALUES (3,1);
+/*!40000 ALTER TABLE `billing_addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -119,7 +146,7 @@ CREATE TABLE `order_details` (
   KEY `fk_order_details_products1_idx` (`product_id`),
   CONSTRAINT `fk_order_details_orders1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_order_details_products1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,6 +155,7 @@ CREATE TABLE `order_details` (
 
 LOCK TABLES `order_details` WRITE;
 /*!40000 ALTER TABLE `order_details` DISABLE KEYS */;
+INSERT INTO `order_details` VALUES (1,1,4,'2016-07-28 11:53:52','2016-07-28 11:53:52'),(2,1,3,'2016-07-28 11:53:55','2016-07-28 11:53:55'),(3,1,3,'2016-07-28 11:53:56','2016-07-28 11:53:56'),(4,1,3,'2016-07-28 11:53:57','2016-07-28 11:53:57'),(5,1,1,'2016-07-28 11:53:58','2016-07-28 11:53:58');
 /*!40000 ALTER TABLE `order_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +176,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`id`),
   KEY `fk_orders_users1_idx` (`user_id`),
   CONSTRAINT `fk_orders_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,6 +185,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,'Order in process','0',2,'2016-07-28 11:51:13','2016-07-28 11:51:13');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +200,7 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `description` text,
-  `price` varchar(45) DEFAULT NULL,
+  `price` float DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
@@ -189,8 +218,35 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Baby things','Things for babies','1.11','located here',100,1,'2016-07-27 15:29:10','2016-07-27 15:29:10'),(2,'Poop','Toilet seat cover','49.99','/location/of/img',90,2,'2016-07-27 15:30:43','2016-07-27 15:30:43'),(3,'Pony stuff','My Little Pony things','29.99','/location/of/img',10,3,'2016-07-27 15:31:18','2016-07-27 15:31:18'),(4,'Zombie Brain','Used to distract zombies','69.99','/location/of/img',500,4,'2016-07-27 15:31:47','2016-07-27 15:31:47');
+INSERT INTO `products` VALUES (1,'Baby things','Things for babies',1.11,'located here',100,1,'2016-07-27 15:29:10','2016-07-27 15:29:10'),(2,'Poop','Toilet seat cover',49.99,'/location/of/img',90,2,'2016-07-27 15:30:43','2016-07-27 15:30:43'),(3,'Pony stuff','My Little Pony things',29.99,'/location/of/img',10,3,'2016-07-27 15:31:18','2016-07-27 15:31:18'),(4,'Zombie Brain','Used to distract zombies',69.99,'/location/of/img',500,4,'2016-07-27 15:31:47','2016-07-27 15:31:47');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shipping_addresses`
+--
+
+DROP TABLE IF EXISTS `shipping_addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shipping_addresses` (
+  `address_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  KEY `fk_shipping_addresses_addresses1_idx` (`address_id`),
+  KEY `fk_shipping_addresses_orders1_idx` (`order_id`),
+  CONSTRAINT `fk_shipping_addresses_addresses1` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_shipping_addresses_orders1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shipping_addresses`
+--
+
+LOCK TABLES `shipping_addresses` WRITE;
+/*!40000 ALTER TABLE `shipping_addresses` DISABLE KEYS */;
+INSERT INTO `shipping_addresses` VALUES (4,1);
+/*!40000 ALTER TABLE `shipping_addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -209,7 +265,7 @@ CREATE TABLE `users` (
   `updated_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +274,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Chris','B','c@gmail.com','c','2016-07-27 15:51:57','2016-07-27 15:51:57');
+INSERT INTO `users` VALUES (1,'Chris','B','c@gmail.com','c','2016-07-27 15:51:57','2016-07-27 15:51:57'),(2,'Tom','B','b@gmail.com','b','2016-07-28 11:48:57','2016-07-28 11:48:57');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -231,4 +287,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-27 16:20:00
+-- Dump completed on 2016-07-28 17:39:05

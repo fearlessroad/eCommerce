@@ -2,13 +2,32 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller{
+	
 	public function index(){
 		$this->load->model('product');
 		$products = $this->product->getAllProducts();
 		$data = array('products'=>$products);
 		$this->load->view('productListing',$data);
 	}
-	public function addProduct(){
+	
+	public function addCart($id){								//Tom added & needs; please don't delete
+		$quantity = $this->session->userdata($id);
+		$quantity = $this->input->post('qty');
+		$this->session->set_userdata($id, $quantity);
+		redirect('/items');
+	}
+
+
+	// click image to see product_view
+	//public function productView(){
+	//	$this->load->view('productDescription');
+	//}
+
+	public function shoppingcart(){
+		$this->load->view('shoppingcart');
+	}
+
+	public function addProduct(){								//this adds products to the database from edit product
 		$this->load->model('product');
 		if($this->input->post('categoryWrite')==null){
 			$category = $this->input->post('categoryDrop');
@@ -38,6 +57,7 @@ class Products extends CI_Controller{
 		$this->product->addProduct($data);
 		redirect('dashboards/showproducts');
 	}
+
 	public function getAll(){
 		$this->load->model('product');
 		$products = $this->product->getAll();
@@ -53,7 +73,8 @@ class Products extends CI_Controller{
 		$this->load->view('productDescription',$data);
 	}
 
-	public function shoppingcart(){
-		$this->load->view('shoppingcart');
-	}
+	//public function shoppingcart(){
+	//	$this->load->view('shoppingcart');
+	//}
+
 }
