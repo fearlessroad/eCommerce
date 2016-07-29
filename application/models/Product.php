@@ -44,4 +44,16 @@ class Product extends CI_Model {
 			LIMIT 4";
 		return $this->db->query($query, array($id))->result_array();
 	}
+	public function getDashboardOrders(){
+		$query = "SELECT order_details.order_id 'Order ID', users.first_name Name, DATE(order_details.created_at) Date, 
+					CONCAT_WS(' ',addresses.address1,addresses.address2, addresses.city, addresses.state, addresses.zip) 'Billing Address', 
+					orders.status Status, TRUNCATE(SUM(products.price),2) Total 
+					FROM users
+					JOIN addresses ON addresses.user_id = users.id
+					JOIN billing_addresses ON addresses.id = billing_addresses.address_id
+					JOIN orders ON orders.user_id =  users.id
+					JOIN order_details ON order_details.order_id = orders.id
+					JOIN products ON products.id = order_details.product_id";
+		return $this->db->query($query)->result_array();
+	}
 }
