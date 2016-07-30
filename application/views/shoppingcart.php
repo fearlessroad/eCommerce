@@ -15,7 +15,7 @@
 
 	<div class ="container">
 
-
+<!-- Tom be adding session shi... I mean session stuff here real soon. Will also make the table nice and pretty too. -->
 
 		<table id="cart">
 			<thead>
@@ -55,7 +55,7 @@
 				<li><a href="/products/shoppingcart/"><img id="cart" src="/assets/images/shoppingcart.png"></a></li>
 		</ul>
 		</div>
->>>>>>> fa7243a76394bf173d7766d40e7ed5bdad0f140d
+
 
 
 
