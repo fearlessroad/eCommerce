@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
+<!-- saved from url=(0039)http://localhost/dashboards/showorders/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
 	<title>Dashboard Orders</title>
-	<link rel="stylesheet" types="text/css" href="/assets/css/mainDashboard.css">
-	</style>
+	<link rel="stylesheet" types="text/css" href="./Dashboard Orders_files/mainDashboard.css">
+	
 </head>
 <body>
-	<div id='wrapper'>
+	<div id="wrapper">
 		<div id="header">
 			<h1>Dashboard</h1>
-			<a href="/dashboards/showorders/">Orders</a>
-			<a href="/dashboards/showproducts/">Products</a>
-			<a href="/dashboards/logout/" href="/dashboards/logout">Logout</a>			
+			<a href="http://localhost/dashboards/showorders/">Orders</a>
+			<a href="http://localhost/dashboards/showproducts/">Products</a>
+			<a href="http://localhost/dashboards/logout/">Logout</a>			
 			<form id="Search">
 				<input type="search" name="search" placeholder="search">
 			</form>
@@ -30,7 +30,7 @@
 
 		<div id="orders">
 			<table>
-				<tr>
+				<tbody><tr>
 					<th class="tableHead" id="orderID">Order ID</th>
 					<th class="tableHead" id="name">Name</th>
 					<th class="tableHead" id="date">Date</th>
@@ -39,22 +39,15 @@
 					<th class="tableHead" id="status">Status</th>
 				</tr>
 					<!-- foreach () -->
-			<?php
-			// var_dump($products); die();
-			foreach ($products as $product){
-			?>
-				<tr class="orderRow">
-					<td><?=$product['Order ID']?></td>
-					<td><?=$product['Name']?></td>
-					<td><?=$product['Date']?></td>
-					<td><?=$product['Billing Address']?></td>
-					<td><?=$product['Total']?></td>
-					<td><?=$product['Status']?></td>
+							<tr class="orderRow">
+					<td>1</td>
+					<td>Tom</td>
+					<td>2016-07-28</td>
+					<td>123 Apt 1 Burbank CA 91234</td>
+					<td>162.17</td>
+					<td>Order in process</td>
 				</tr>
-			<?php
-			}
-			?>
-				<tr class="orderRow">
+							<tr class="orderRow">
 					<td></td>
 					<td></td>
 					<td></td>
@@ -95,7 +88,7 @@
 							<option value="Shipped">Shipped</option>
 							<option value="Order in process">Order in process</option>
 							<option value="Cancelled">Cancelled</option>
-							</option>
+							
 						</select>
 					</td>
 				</tr>
@@ -126,12 +119,12 @@
 							<option value="Cancelled">Cancelled</option>
 						</select></td>
 				</tr>			
-		</div>
+		
 
 
 
 
 
-	</div>	
-</body>
-</html>
+		
+
+</tbody></table></div></div></body></html>

@@ -10,7 +10,8 @@ class Products extends CI_Controller{
 		$this->load->view('productListing',$data);
 	}
 	
-	public function addCart($id){			//Tom added & needs; please don't delete
+
+	public function addCart($id){			//Tom added & needs; please don't delete (7-29-16 5:36pm)
 		
 		if($this->session->userdata('product')==null){
 			$products = array();
@@ -24,12 +25,12 @@ class Products extends CI_Controller{
 		redirect('products/shoppingcart');
 	}
 
-		// click image to see product_view
+		// click image to see product_view			<--DO WE NEED THIS? -Tom (7-29)
 	//public function productView(){
 	//	$this->load->view('productDescription');
 	//}
 
-	public function shoppingcart(){
+	public function shoppingcart(){					//Tom added and needs (7-29-16 5:36pm)
 		$this->load->model('product');
 		
 
@@ -87,8 +88,11 @@ class Products extends CI_Controller{
 		$this->load->view('productDescription',$data);
 	}
 
-	//public function shoppingcart(){
-	//	$this->load->view('shoppingcart');
-	//}
+	public function getProductsByCategory($name){
+		$this->load->model('product');
+		$jquery = $this->product->getProductsByCategory($name);
+		$whatever = array('jquery'=>$jquery);
+		$this->load->view('partials/jquery', $whatever);
+	}
 
 }

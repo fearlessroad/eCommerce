@@ -7,6 +7,25 @@
 <head>
 	<title>The Unpopped Kernel</title>
 	<link rel="stylesheet" type="text/css" href="/assets/css/productlisting.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.nav').click(function(e){
+				e.preventDefault();
+				if($(this).attr('id')=='babies'){
+					var name = $(this).attr('id');
+				}
+				$.ajax({
+					method:'GET',
+					url:'/products/getProductsByCategory/'+name+'/'
+				}).done(function(data){
+					$('#products').html(data);
+				});
+			});
+		});
+
+
+	</script>
 </head>
 <body>
 	<div id="wrapper">
@@ -17,20 +36,11 @@
 			<h2>The Unpopped Kernel</h2> 
 		</div>			
 		<div id="categories">
-			<?php 											//Tom's cart total updating
-				$total = 0;
-				foreach($products as $product)
-				{
-					$temp = $this->session->userdata($product['id']);
-					$total += $temp;
-				}
-			?>
-
 			<ul>
-				<li><a class="nav" href="">Designer Babies</a></li>
-				<li><a class="nav" href="">Toilet Seat Art</a></li>
-				<li> <a class="nav" href="">My Little Pony Gear</a></li>
-				<li><a class="nav" href="">Apocalypse Kits</a></li>
+				<li><a id="babies" class="nav" href="#">Designer Babies</a></li>
+				<li><a id="toiletseatart" class="nav" href="#">Toilet Seat Art</a></li>
+				<li> <a id="mylittleponygear" class="nav" href="#">My Little Pony Gear</a></li>
+				<li><a id="apocalypse kits" class="nav" href="#">Apocalypse Kits</a></li>
 				<form  id="search" action="?" method="post">
 				<li><label><input type="text" name="product_name"></label></li>
 				<li><input id="button" type="submit" name="Submit"></li></form>
@@ -39,7 +49,7 @@
 			</ul>
 		</div>
 		<div id="main">
-			<h1>Some product (page #)</h1>
+			<h1>All Products</h1>
 			<a  id="first" href="?">First</a>
 			<a  id="prev" href="?">Prev</a>
 			<a  id="" href="?">#</a>
@@ -65,127 +75,6 @@
 
 		</div>
 	</div>
-<!-- ======= -->
-<!-- <div id="header">
-	<h2>The Unpopped Kernel</h2> 
-</div>
-
-	
-<div id="categories">
-	<ul>
-		<li><a href="">Babies</a></li>
-		<li><a href="">Toilet Seat Art</a></li>
-		<li> <a href="">My Little Pony Gear</a></li>
-		<li><a href="">Apocalypse Kits</a></li>
-		
-	</ul>
-		<form  id="search" action="?" method="post">
-		<label>
-			<input type="text" name="product_name">
-		</label>
-		<input id="button" type="submit" name="Submit">
-	</form>
-</div>
-
-<div id="main">
-	<h1>Some product (page #)</h1>
-	<a  id="first" href="?">First</a>
-	<a  id="prev" href="?">Prev</a>
-	<a  id="" href="?">#</a>
-	<a id="next" href="?">Next</a><br>	
-	<form action="" method="post">
-		<label>
-			<select>
-				<option>Price</option>
-				<option>Most Popular</option>
-			</select>
-		</label>
-	</form>
-
-	
-	<a href="/products/productView">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-
-	<a href="?">
-	<div></div>
-	</a>
-	
-	<a href="?">
-	<div></div>
-	</a>
-	
-	<a href="?">
-	<div></div>
-	</a>
-	<br>
-
-
-	
-	
-
-
-	<a  id="page_one" href="?">1</a>
-	<a id="page_two" href="?">2</a>
-
-</div>
- -->
-<!-- >>>>>>> master:application/views/productListing.php -->
+	<h1> TEST</h1>
 </body>
 </html>

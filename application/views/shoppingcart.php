@@ -12,7 +12,11 @@
 	</script>
 </head>
 <body>
+
 	<div class ="container">
+
+
+
 		<table id="cart">
 			<thead>
 				<th class="tableHead" id="Item">Item</th>
@@ -28,10 +32,30 @@
 			</tbody>
 		</table>
 
+
 		
 		<form action="/products/index/">
 		<input type="submit" value="Continue Shopping">
 		</form>
+
+
+<div id="wrapper">
+		<div id="header">
+			<h2>The Unpopped Kernel</h2> 
+		</div>			
+		<div id="categories">
+		<ul>
+				<li><a class="nav" href="">Designer Babies</a></li>
+				<li><a class="nav" href="">Toilet Seat Art</a></li>
+				<li> <a class="nav" href="">My Little Pony Gear</a></li>
+				<li><a class="nav" href="">Apocalypse Kits</a></li>
+				<form  id="search" action="?" method="post">
+				<li><label><input type="text" name="product_name"></label></li>
+				<li><input id="button" type="submit" name="Submit"></li></form>
+				<li><a href="/products/shoppingcart/"><img id="cart" src="/assets/images/shoppingcart.png"></a></li>
+		</ul>
+		</div>
+>>>>>>> fa7243a76394bf173d7766d40e7ed5bdad0f140d
 
 
 
@@ -71,7 +95,7 @@
 					<input type="text" name="state"><br>
 					<label>Zipcode</label>
 					<input type="text" name="zipcode"><br>
-<!--					<script
+					<script
     					src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     					data-key="pk_test_BKJLSNKJkOkrl1UufIl8SHEz"
     					data-amount="999"
@@ -79,11 +103,16 @@
     					data-description="Widget"
     					data-image="/img/documentation/checkout/marketplace.png"
     					data-locale="auto"
-    					data-zip-code="true"> 	
-  					</script>	-->
+
+    					data-zip-code="true">
+  					</script>
+		<form action="/products/index/">
+		<input type="submit" value="Continue Shopping">
+		</form>
+
 				</div>
 			</div>
 		</form>
-	</div>
+</div>
 </body>
 </html>

@@ -1,0 +1,71 @@
+{
+    margin: 0px
+    padding: 0px;
+}
+h1, a{
+    display: inline-block;
+    color: white;
+    margin: 10px;
+}
+#logOff{
+    margin-left: 550px;
+}
+#wrapper{
+    margin:0px auto;
+    width:700px;
+}
+#header{
+    background-color: #A00006;
+    border: 1px solid black;
+    height: 60px;
+    margin-bottom:10px;
+}
+input[type="search"]{
+    margin: 10px;
+    width: 100px;
+}
+#searchBar{
+    margin:30px 0 10px 10px;
+}
+#showAll{
+    margin-left: 600px;
+    color: white;
+    background-color: #0000FF;
+}
+#orderID{
+    width: 180px;
+}
+#name{
+    width: 70px;
+}
+#date{
+    width: 180px;
+}
+#billingAddress{
+    width: 200px;
+}
+#total{
+    width: 200px;
+}
+#status{
+    width: 150px;
+}
+.actions{                   /*this is the select/drop down selector -> need to change*/
+    margin-left: 40px;
+}
+#orders{                    /*table overall height*/
+    height: 400px;
+}
+.tableHead{
+    height: 25px;
+}
+.orderRow{                  /*each table row*/
+    height: 40px;
+    border: 1px solid black;
+}
+tr:nth-child(odd){
+    background-color:#CCCCCC;
+}
+.page{
+    margin: 20px 20px 20px 20px;
+}
